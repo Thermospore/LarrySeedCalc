@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // Calculate larry cycles????
 int larryCycles(int randVal)
@@ -65,11 +66,14 @@ int main()
 		}
 	}
 	
-	// Print final result
+	// Print final results
 	printf(
-		"BEST SEED: #%d with an avg of %.2f cycles\n"
+		"Best seed: #%d with an avg of %.2f cycles\n"
 		, bestSeed, bestSeedAvg
 	);
+	
+	time_t startTime = (time_t)bestSeed; // Convert seed number to system time
+	printf("Start game at: %s", ctime(&startTime));
 	
 	return 0;
 }
