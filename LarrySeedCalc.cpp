@@ -21,6 +21,8 @@ int main()
 	
 	int bestSeed; // Best seed
 	float bestSeedAvg; // Avg Larry cycles for best seed
+	int worstSeed; // Best seed
+	float worstSeedAvg; // Avg Larry cycles for best seed
 	
 	// Get range values from user
 	printf("Enter \"[base] [range]\": ");
@@ -67,16 +69,30 @@ int main()
 			bestSeed = s;
 			bestSeedAvg = avg;
 		}
+		
+		// Store worst seed if...
+		if(
+			   s == 0            // we are on the first seed
+			|| avg > worstSeedAvg // Or we find a new best seed
+		)
+		{
+			worstSeed = s;
+			worstSeedAvg = avg;
+		}
 	}
 	
 	// Print final results
 	printf(
-		"Best seed: #%d with an avg of %.2f cycles\n"
+		" Best seed: #%d with an avg of %.2f cycles\n"
 		, bestSeed, bestSeedAvg
+	);
+	printf(
+		"worst seed: #%d with an avg of %.2f cycles\n"
+		, worstSeed, worstSeedAvg
 	);
 	
 	time_t startTime = (time_t)bestSeed; // Convert seed number to system time
-	printf("Start game at: %s", ctime(&startTime));
+	printf("\nStart game at: %s", ctime(&startTime));
 	
 	return 0;
 }
