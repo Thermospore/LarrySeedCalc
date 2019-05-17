@@ -1,3 +1,5 @@
+// Currently is only in a demonstration state
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,9 +18,9 @@ int main()
 	// Vars for # of rand() calls
 	// These will be much higher for the real deal
 	int range = 5;
-	int base = 11;
+	int base = 15;
 	
-	int bestSeed;   // Best seed
+	int bestSeed; // Best seed
 	float bestSeedAvg; // Avg Larry cycles for best seed
 	
 	// Loop for every time seed
@@ -63,6 +65,7 @@ int main()
 		}
 	}
 	
+	// Print final result
 	printf(
 		"BEST SEED: #%d with an avg of %.2f cycles\n"
 		, bestSeed, bestSeedAvg
