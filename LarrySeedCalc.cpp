@@ -35,7 +35,7 @@ int main()
 		
 		printf("srand(%d)\n", s);
 		
-		float total = 0; // Used to calc average time
+		float total = 0; // Used to calc average cycles
 		
 		// Loop for each of the # of calls in our range
 		for (int r = 0; r < range; r++)
@@ -46,7 +46,7 @@ int main()
 				rand();
 			}
 			
-			// Calculate Larry time
+			// Calculate Larry cycles
 			int result = larryCycles(rand());
 			printf("%2d calls -> %2d\n", base+r, result);
 			
