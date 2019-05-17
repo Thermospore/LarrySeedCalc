@@ -17,9 +17,13 @@ int larryCycles(int randVal)
 int main()
 {
 	// Vars for # of rand() calls
-	// These will be much higher for the real deal
-	int range = 5;
-	int base = 15;
+	int range;
+	int base;
+	
+	// Get range values from user
+	printf("enter \"[base] [range]\": ");
+	scanf("%d %d", &base, &range);
+	printf("\n");
 	
 	int bestSeed; // Best seed
 	float bestSeedAvg; // Avg Larry cycles for best seed
